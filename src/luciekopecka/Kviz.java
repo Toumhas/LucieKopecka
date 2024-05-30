@@ -24,11 +24,17 @@ public class Kviz extends javax.swing.JFrame {
         initComponents();
     }
     
+    /**
+     * Inicializuje okno Kvízu.
+     * @param dotaznik
+     * @param MainMenu 
+     */
     public Kviz(Dotaznik dotaznik, javax.swing.JFrame MainMenu) {
         initComponents();
         this.dotaznik = dotaznik;
         this.MainMenu = MainMenu;
         
+        //Tlačítka odpovědí se nasází do pole aby se ve zbytku funkcí falo iterovat polem.
         this.odpovediButtons = new ArrayList<javax.swing.JButton>();
         this.odpovediButtons.add(odpoved1);
         this.odpovediButtons.add(odpoved2);
@@ -37,7 +43,6 @@ public class Kviz extends javax.swing.JFrame {
         this.odpovediButtons.add(odpoved5);
         this.odpovediButtons.add(odpoved6);
         
-        //this.continueButton.setVisible(false);
         this.setCurrentOtazka();
     }
 
@@ -203,6 +208,9 @@ public class Kviz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Nastavi aktualni text otazky a tlacitka odpovedi.
+     */
     private void setCurrentOtazka() {
         this.currentOtazka = this.dotaznik.getOtazkaOnIndex(this.currentOtazkaIndex);
         this.textOtazky.setText(this.currentOtazka.getTextOtazky());
@@ -223,6 +231,10 @@ public class Kviz extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Rozhodne, zda je vybraná odpoveď správná. Vypíše podle toho barvy, přidá skóre a zviditelní tlačítko continue.
+     * @param chosenAnswer Index vibrané odpovědi
+     */
     private void decideAnswer(int chosenAnswer) {
         if(chosenAnswer >= this.currentOdpovedi.size())
             return;
@@ -264,6 +276,10 @@ public class Kviz extends javax.swing.JFrame {
         this.decideAnswer(3);
     }//GEN-LAST:event_odpoved4ActionPerformed
 
+    /**
+     * Pokud byly všechny otázky zodpovězeny, ukáže výslednou obrazovku. Pokud ne. nastaví další otázku.
+     * @param evt 
+     */
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
         if(this.currentOtazkaIndex < this.dotaznik.otazky.size() - 1)
             this.currentOtazkaIndex++;

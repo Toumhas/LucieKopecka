@@ -26,6 +26,11 @@ public class PomocneFunkce {
         return null;
     }
     
+    /**
+     * Nastaví neviditelnost tlačítka bez toho aby zmizelo úplně a zníčilo rozložení
+     * @param button
+     * @param visible 
+     */
     public static void setButtonVisibilty(javax.swing.JButton button, boolean visible) {
         button.setOpaque(visible);
         button.setContentAreaFilled(visible);

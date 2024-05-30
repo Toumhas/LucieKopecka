@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MainMenu extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainMenu
+     * Inicializuje okno hlavního menu
      */
     public MainMenu() {
         initComponents();
@@ -22,16 +22,11 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
         Zadani = new javax.swing.JPanel();
         filePathLabel = new javax.swing.JLabel();
         filePathLoadButton = new javax.swing.JButton();
         filePathField = new javax.swing.JTextField();
         filePathError = new javax.swing.JLabel();
-
-        jScrollPane1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jScrollPane1.setViewportView(jTextPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +44,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         filePathField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        filePathField.setText("input.txt");
         filePathField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 filePathFieldKeyTyped(evt);
@@ -110,6 +104,10 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Otestuje zda existuje zadaný soubor a pokusí se ho načíst. Pokud se to nepodaří, zobrazí se chyba.
+     * @param evt 
+     */
     private void filePathLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePathLoadButtonActionPerformed
         Dotaznik dotaznik = new Dotaznik();
         switch(dotaznik.nactiSoubor(this.filePathField.getText())) {
@@ -130,6 +128,10 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_filePathLoadButtonActionPerformed
 
+    /**
+     * Zmiznutí chybové zprávy ve chvíli kdy se změní zadávací pole.
+     * @param evt 
+     */
     private void filePathFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filePathFieldKeyTyped
         this.filePathError.setVisible(false);
     }//GEN-LAST:event_filePathFieldKeyTyped
@@ -176,7 +178,5 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField filePathField;
     private javax.swing.JLabel filePathLabel;
     private javax.swing.JButton filePathLoadButton;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

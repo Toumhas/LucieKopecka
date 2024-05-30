@@ -4,10 +4,6 @@
  */
 package luciekopecka;
 
-/**
- *
- * @author henry
- */
 public class Vysledky extends javax.swing.JFrame {
 
     protected javax.swing.JFrame MainMenu;
@@ -20,6 +16,12 @@ public class Vysledky extends javax.swing.JFrame {
         initComponents();
     }
     
+    /**
+     * Inicializuje okno s výsledky. V paramaetrech jsou minulá okna aby se nemusely při případném puštění znovu vytvořit.
+     * @param vysledneSkore
+     * @param MainMenu
+     * @param Kviz 
+     */
     public Vysledky(int vysledneSkore, javax.swing.JFrame MainMenu, javax.swing.JFrame Kviz) {
         initComponents();
         this.MainMenu = MainMenu;
@@ -106,12 +108,20 @@ public class Vysledky extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Vypne celý program a zahodí okna.
+     * @param evt 
+     */
     private void buttonKonecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKonecActionPerformed
         this.MainMenu.dispose();
         this.Kviz.dispose();
         this.dispose();
     }//GEN-LAST:event_buttonKonecActionPerformed
 
+    /**
+     * Vrátí program zpět na okno načítací soubor.
+     * @param evt 
+     */
     private void buttonNacistJinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNacistJinyActionPerformed
         // TODO add your handling code here:
         this.MainMenu.setVisible(true);
