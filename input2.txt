@@ -42,3 +42,5 @@ Hodnota:10
 Špatně:Kruh
 Správně:Čtverec
 Špatně:Elipsa
+
+#Naschvál špatný formát na testování chybné zprávy.
