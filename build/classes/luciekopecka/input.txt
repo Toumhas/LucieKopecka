@@ -1,0 +1,15 @@
+Název:Test VV 01
+Otázka 1zN:Která barva je nejlepší?
+#TODO
+#TODO
+Hodnota:5
+Správně:Modrá
+Špatně:Růžová
+Špatně:Purpurová
+Špatně:Fialová
+
+Otázka 1zN:Který tvar je hranatý?
+Hodnota:10
+Špatně:Kruh
+Správně:Čtverec
+Špatně:Elipsa
